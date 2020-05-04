@@ -4,13 +4,11 @@ from PyQt5.QtWidgets import QApplication, QWidget
 
 from PyQt5.QtCore import pyqtSlot
 
-##from PyQt5.QtWidgets import  
+##from PyQt5.QtWidgets import
 
-##from PyQt5.QtGui import  
-
+##from PyQt5.QtGui import
+#import miduCal
 from miduCal import Ui_Widget
-
-
 class QmyWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)  # 调用父类构造函数，创建窗体
@@ -20,14 +18,11 @@ class QmyWidget(QWidget):
     ##  =================自定义功能函数=================================
 
     ##  ==========由connectSlotsByName() 自动连接的槽函数===============
-    def on_btnCalculate_clicked(self):  ##"计算总价"按钮
-        num = int(self.ui.density.text())
-        price = float(self.ui.volume.text())
-        total = num * price
-        print(total)
-        self.ui.weight.setText("%.2f" % total)
-
-
+    def on_btnCalculate_clicked(self):  ##"计算重量"按钮
+        density = int(self.ui.density.text())
+        volume = float(self.ui.volume.text())
+        weight = density * volume
+        self.ui.weight.setText("%.2f" %weight)
 
 ##  =============自定义槽函数===============================
 
