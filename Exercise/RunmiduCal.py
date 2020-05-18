@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QWidget
 
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import  pyqtSlot
 
 ##from PyQt5.QtWidgets import
 
@@ -18,10 +18,10 @@ class QmyWidget(QWidget):
     ##  =================自定义功能函数=================================
 
     ##  ==========由connectSlotsByName() 自动连接的槽函数===============
-    def on_btnCalculate_clicked(self):  ##"计算重量"按钮
+    def on_pushButton_clicked(self):  ##"计算重量"按钮(pushButton需为UI中按钮的名称)
         density = int(self.ui.density.text())
         volume = float(self.ui.volume.text())
-        weight = density * volume
+        weight = density*volume
         self.ui.weight.setText("%.2f" %weight)
 
 ##  =============自定义槽函数===============================

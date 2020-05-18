@@ -35,6 +35,8 @@ class Ui_Widget(object):
         self.pushButton = QtWidgets.QPushButton(Widget)
         self.pushButton.setGeometry(QtCore.QRect(100, 180, 93, 28))
         self.pushButton.setObjectName("pushButton")
+        self.label.setBuddy(self.density)
+        self.label_2.setBuddy(self.volume)
 
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
@@ -42,7 +44,9 @@ class Ui_Widget(object):
     def retranslateUi(self, Widget):
         _translate = QtCore.QCoreApplication.translate
         Widget.setWindowTitle(_translate("Widget", "Form"))
+        self.density.setText(_translate("Widget", "12"))
         self.label.setText(_translate("Widget", "密度"))
         self.label_2.setText(_translate("Widget", "体积"))
+        self.volume.setText(_translate("Widget", "2"))
         self.label_3.setText(_translate("Widget", "重量"))
         self.pushButton.setText(_translate("Widget", "计算"))
