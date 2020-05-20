@@ -1,7 +1,7 @@
 import os
 import xlwt  # 操作excel模块
 import sys
-
+#不同文件夹需要更改feile_path中的路径和f.save中的路径及Excel文件名
 file_path = r'F:\BaiduNetdiskDownload'  # 要获取当前路径，filenamelist为要写入的文件
 f = xlwt.Workbook(encoding='utf-8', style_compression=0)  # 新建一个excel
 sheet = f.add_sheet('FileName')  # 新建一个sheet

@@ -1,40 +1,11 @@
-import sys
+def write_file():
+    book = xlwt.Workbook(encoding='utf-8') #创建Workbook，相当于创建Excel
 
-from PyQt5.QtWidgets import QApplication, QWidget
+    # 创建sheet，Sheet1为表的名字，cell_overwrite_ok为是否覆盖单元格
+    sheet1 = book.add_sheet(u'Sheet1', cell_overwrite_ok=True)
 
-from PyQt5.QtCore import pyqtSlot
-
-##from PyQt5.QtWidgets import  
-
-##from PyQt5.QtGui import  
-
-from miduCal import Ui_Widget
-
-
-class QmyWidget(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)  # 调用父类构造函数，创建窗体
-        self.ui = Ui_Widget()  # 创建UI对象
-        self.ui.setupUi(self)  # 构造UI界面
-
-    ##  =================自定义功能函数=================================
-
-    ##  ==========由connectSlotsByName() 自动连接的槽函数===============
-    def on_btnCalculate_clicked(self):  ##"计算总价"按钮
-        num = int(self.ui.density.text())
-        price = float(self.ui.volume.text())
-        total = num * price
-        print(total)
-        self.ui.weight.setText("%.2f" % total)
-
-
-
-##  =============自定义槽函数===============================
-
-
-##  ============窗体测试程序 ================================
-if __name__ == "__main__":  # 用于当前窗体测试
-    app = QApplication(sys.argv)  # 创建GUI应用程序
-    form = QmyWidget()  # 创建窗体
-    form.show()
-    sys.exit(app.exec_())
+    #向表中添加数据
+    sheet1.write(0, 0, 'Englishname')  #第0行第0列
+    sheet1.write(1, 0, 'Hellen')  #第一行第0列
+    sheet1.write(0, 1, '中文名字')
+    sheet1.write(1, 1, '海伦')

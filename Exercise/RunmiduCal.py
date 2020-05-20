@@ -1,5 +1,5 @@
 import sys
-
+import math
 from PyQt5.QtWidgets import QApplication, QWidget
 
 from PyQt5.QtCore import  pyqtSlot
@@ -21,7 +21,7 @@ class QmyWidget(QWidget):
     def on_pushButton_clicked(self):  ##"计算重量"按钮(pushButton需为UI中按钮的名称)
         density = int(self.ui.density.text())
         volume = float(self.ui.volume.text())
-        weight = density*volume
+        weight = density*volume*math.sqrt(4)
         self.ui.weight.setText("%.2f" %weight)
 
 ##  =============自定义槽函数===============================
