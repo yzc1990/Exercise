@@ -1,17 +1,21 @@
-import os
+import random
 
+rang1 = int(input("请设置本局游戏的最小值:"))
+rang2 = int(input("请设置本局游戏的最大值:"))
+num = random.randint(rang1, rang2)
+guess = "guess"
+print("数字猜谜游戏！")
+i = 0
+while guess != num:
+    i += 1
+    guess = int(input("请输入你猜的数字："))
 
-def mkdir(path):
-    folder = os.path.exists(path)
-
-    if not folder:  # 判断是否存在文件夹如果不存在则创建为文件夹
-        os.makedirs(path)  # makedirs 创建文件时如果路径不存在会创建这个路径
-        print("---  new folder...  ---")
-        print("---  OK  ---")
-
+    if guess == num:
+        print("恭喜，你猜对了！")
+    elif guess < num:
+        print("你猜的数小了...")
     else:
-        print("---  There is this folder!  ---")
+        print("你猜的数大了...")
 
-
-file = "G:\\xxoo\\test"
-mkdir(file)  # 调用函数
+print("你总共猜了%d" % i + "次", end='')
+print(",快和你朋友较量一下...")
