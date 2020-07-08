@@ -17,7 +17,7 @@ img_name = '1氯化系统（7号炉）'
 # screen_area = sheet.used_range # 有内容的区域
 # creen_area.CopyPicture()  # 复制图片区域
 # 设置复制的区域
-sheet.Range('A1:Q109').CopyPicture()
+sheet.Range('A1:Q85').CopyPicture()
 sheet.Paste()  # 粘贴
 excel.Selection.ShapeRange.Name = img_name  # 将刚刚选择的Shape重命名，避免与已有图片混淆
 sheet.Shapes(img_name).Copy()  # 选择图片
@@ -25,6 +25,17 @@ img = ImageGrab.grabclipboard()  # 获取剪贴板的图片数据
 # time.sleep(2)
 print(img)  # 可以弄个报错
 img.save("C:\\Users\\Administrator\\Desktop\\Report\\" + img_name + ".PNG")
+
+
+
+
+
+
+
+
+
+
+
 workbook.Close(False)  # 关闭Excel文件，不保存
 excel.Quit()  # 退出Excel
 pythoncom.CoUninitialize()  # 关闭多线程
